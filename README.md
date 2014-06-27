@@ -54,3 +54,18 @@ public class HomePageModel : uModel&lt;HomePageModel&gt; {
 Here you see a document type containing a Title and a Highlight that is multiple media picker. In the object you see that properties back. By adding a attribute [W3S.UmbracoMedia] the uORM knows that it needs to find the relation in the media. If you have a single picker (no multiple) just remove the List&lt;BannerModel&gt; and add BannerModel. This is also possible with [W3S.UmbracoContent], same principe!
 
 The last item in the object are NewsDetail items that need to be displayed on the homepage. [W3S.UmbracoDescendants("NewsDetail", 1)] finds all the descendants with the document type "NewsDetail" from ancestorofself(1). It's that easy!
+
+##More to load in the object?
+If you don't have a simple object to be filled but still want to use the dependency injection. Also included! Just override the load functions like this: 
+
+<pre>
+public class HomePageModel : uModel&lt;HomePageModel&gt; {
+        public String Title { get; set; }
+
+        public override HomePageModel Load(Umbraco.Core.Models.IPublishedContent model) {
+            return base.Load(model);
+        }
+    }
+</pre>
+
+And add the things you need to add.
