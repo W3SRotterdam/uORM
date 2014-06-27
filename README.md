@@ -55,7 +55,7 @@ Here you see a document type containing a Title and a Highlight that is multiple
 
 The last item in the object are NewsDetail items that need to be displayed on the homepage. [W3S.UmbracoDescendants("NewsDetail", 1)] finds all the descendants with the document type "NewsDetail" from ancestorofself(1). It's that easy!
 
-##More to load in the object?
+##More then only load the object?
 If you don't have a simple object to be filled but still want to use the dependency injection. Also included! Just override the load functions like this: 
 
 <pre>
