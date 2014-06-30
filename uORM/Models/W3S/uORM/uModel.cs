@@ -17,7 +17,7 @@ namespace W3S.uORM {
         /// <param name="model">IPublishedContent out of Umbraco </param>
         /// <returns></returns>
         public virtual T Load(IPublishedContent model) {
-            return (T) uOrm.InvokeGenericMethod("ToModel", typeof(T), new Object[] { model });
+            return (T)uOrm.InvokeGenericMethod("ToModel", typeof(T), new Object[] { model });
         }
         /// <summary>
         /// Save existing object to database
@@ -61,6 +61,16 @@ namespace W3S.uORM {
         /// <returns>Succesfull save</returns>
         public virtual Boolean Save(String nodeName, String documentTypeAlias, Int32 parentId, Int32 userId) {
             return uOrm.Save<T>(ApplicationContext.Current, nodeName, this, documentTypeAlias, parentId, userId, false);
+        }
+        /// <summary>
+        /// Save and publish existing object to database
+        /// </summary>
+        /// <param name="nodeName">Name of node</param>
+        /// <param name="documentTypeAlias">Document type alias in Umbraco </param>
+        /// <param name="parentId">Parent node in tree</param>
+        /// <returns>Succesfull save</returns>
+        public virtual Boolean SaveAndPublish(String nodeName, String documentTypeAlias, Int32 parentId) {
+            return uOrm.Save<T>(ApplicationContext.Current, nodeName, this, documentTypeAlias, parentId, 0, true);
         }
         /// <summary>
         /// Save and publish existing object to database
