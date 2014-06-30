@@ -12,7 +12,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>uORM</RootNamespace>
-    <AssemblyName>uORM</AssemblyName>
+    <AssemblyName>W3S.uORM</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -125,7 +125,7 @@
     <Compile Include="Models\W3S\UmbracoModels\LinkModel.cs" />
     <Compile Include="Models\W3S\uORM\Attribute.cs" />
     <Compile Include="Models\W3S\uORM\ModelBinder.cs" />
-    <Compile Include="Models\W3S\uORM\UmbracoApplication.cs" />
+    <Compile Include="Models\W3S\uORM\uApplication.cs" />
     <Compile Include="Models\W3S\uORM\uModel.cs" />
     <Compile Include="Models\W3S\uORM\uORM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

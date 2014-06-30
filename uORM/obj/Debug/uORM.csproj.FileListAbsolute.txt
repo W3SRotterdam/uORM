@@ -1,7 +1,7 @@
-c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\obj\Debug\uORM.csprojResolveAssemblyReference.cache
-c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\bin\uORM.dll.config
-c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\bin\uORM.dll
-c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\bin\uORM.pdb
+c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\bin\Umbraco.Core.xml
+c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\bin\W3S.uORM.dll.config
+c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\bin\W3S.uORM.dll
+c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\bin\W3S.uORM.pdb
 c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\bin\Microsoft.Web.Infrastructure.dll
 c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\bin\System.Net.Http.Formatting.dll
 c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\bin\System.Web.Helpers.dll
@@ -12,7 +12,6 @@ c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\bin\System.Web.Razor
 c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\bin\System.Web.WebPages.Deployment.dll
 c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\bin\System.Web.WebPages.dll
 c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\bin\System.Web.WebPages.Razor.dll
-c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\bin\interfaces.xml
 c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\bin\Microsoft.Web.Infrastructure.xml
 c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\bin\System.Net.Http.Formatting.xml
 c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\bin\System.Web.Helpers.xml
@@ -23,6 +22,5 @@ c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\bin\System.Web.Razor
 c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\bin\System.Web.WebPages.xml
 c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\bin\System.Web.WebPages.Deployment.xml
 c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\bin\System.Web.WebPages.Razor.xml
-c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\bin\Umbraco.Core.xml
-c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\obj\Debug\uORM.dll
-c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\obj\Debug\uORM.pdb
+c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\obj\Debug\W3S.uORM.dll
+c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\obj\Debug\W3S.uORM.pdb
