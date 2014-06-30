@@ -2,7 +2,7 @@
 
 ## Idea?
 
-Want to use strong typed objecs in Umbraco with Dependency Injection? Like this:
+We wanted to use strong typed objecs in Umbraco with Dependency Injection, like this:
 
 <pre>
 public ActionResult HomePage(HomePageModel model) {
@@ -17,7 +17,7 @@ public ActionResult HomePage(RenderModel model) {
 }
 </pre>
 
-We at W3S liked that idea so we build W3S Umbraco Object Relation Mapper (in short uORM). 
+As a solution we build the W3S Umbraco Object Relation Mapper (in short uORM).
 
 ## Basic usage
 Install the uORM.dll and make your document type in Umbraco. Properties in that document type must be the same as your object. (in this example only with a title alias (case don't matter)). 
