@@ -23,7 +23,7 @@ As a solution we build the W3S Umbraco Object Relation Mapper (in short uORM).
 Use NuGet Package Manager Console:
 PM> Install-Package W3S-uORM 
 
-Or download W3S.uORM.dll and add a reference your project.
+Or download W3S.uORM.dll and add a reference your project. (then you need, interfaces.dll, Umbraco.Core.dll and umbraco.dll as reference also).
 
 
 ## Basic usage 
