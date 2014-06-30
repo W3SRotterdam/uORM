@@ -68,7 +68,7 @@ These are the diffent attributes
 * [W3S.UmbracoDescendants(String contentTypeAlias, Int32 ancestorOrSelf)] find all the descendants from a ancestor or self with a specifiek document type alias.
 
 ##Helper objects
-As some media types / json objects are already defined in Umbraco we added those object in the uORM.
+As some media types / json objects are already defined in Umbraco we added those objects in the uORM.
 
 * W3S.UmbracoModels.FileModel, Umbraco Media type File;
 * W3S.UmbracoModels.ImageModel, Umbraco Media type Image;
