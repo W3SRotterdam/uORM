@@ -1,6 +1,6 @@
 # W3S Umbraco Object Relation Mapper
 
-## Idea?
+## Idea!
 
 We wanted to use strong typed objecs in Umbraco with Dependency Injection, like this:
 
@@ -19,8 +19,8 @@ public ActionResult HomePage(RenderModel model) {
 
 As a solution we build the W3S Umbraco Object Relation Mapper (in short uORM).
 
-## Basic usage
-Install the uORM.dll and make your document type in Umbraco. Properties in that document type must be the same as your object. (in this example only with a title alias (case don't matter)). 
+## Basic usage W3S Umbraco Object Relation Mapper
+Install the uORM.dll and create your document type in Umbraco. Properties in that document type must be the same as your object. (in this simple example only with a title alias (case don't matter)). 
 
 Then create a strong typed object like this:
 <pre>
@@ -36,10 +36,17 @@ namespace ProjectName.Models {
     }
 }
 </pre>
-And there you go! A nice object filled with all the properties set for your use!
+
+And your controller:
+
+<pre>
+public ActionResult HomePage(HomePageModel model) {
+    return View(model);
+}
+</pre>
+And there you go! A nice object with all the properties set for your use!
 
 ##Relations?
-
 But what about relations? Lets take a bigger object.
 
 <pre>
