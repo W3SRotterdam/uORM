@@ -1,23 +1,26 @@
 # W3S Umbraco Object Relation Mapper
 
-## Basic usage
+## Idea?
 
-Wouldn't it be nice if you can work strong typed in Umbraco? So no more code like this:
+Want to use strong typed objecs in Umbraco with Dependency Injection? Like this:
 
-<pre>
-public ActionResult HomePage(RenderModel model) {
-    return View(model);
-}
-</pre>
-But like this:
 <pre>
 public ActionResult HomePage(HomePageModel model) {
     return View(model);
 }
 </pre>
-And that you get your own object with all the properties set! Wouldn't that be nice.. now you can! Introducing W3S uORM.
 
-Install the uORM.dll and just make your document type in Umbraco with in this example just with a title alias (alias and property must be the same name (case don't matter). 
+And not the default Umbraco way like this (route hijacking http://our.umbraco.org/documentation/Reference/Mvc/custom-controllers):
+<pre>
+public ActionResult HomePage(RenderModel model) {
+    return View(model);
+}
+</pre>
+
+We at W3S liked that idea so we build W3S Umbraco Object Relation Mapper (in short uORM). 
+
+## Basic usage
+Install the uORM.dll and make your document type in Umbraco. Properties in that document type must be the same as your object. (in this example a title alias (case don't matter)). 
 
 Then create a strong typed object like this:
 <pre>
@@ -33,13 +36,11 @@ namespace ProjectName.Models {
     }
 }
 </pre>
-And there you go! A nice object with all the properties set ready for your use!
-
-p.s. you need to use route hijacking for this http://our.umbraco.org/documentation/Reference/Mvc/custom-controllers
+And there you go! A nice object filled with all the properties set for your use!
 
 ##Relations?
 
-But what about relations? Lets see a somewhat bigger object.
+But what about relations? Lets take a bigger object.
 
 <pre>
 public class HomePageModel : uModel&lt;HomePageModel&gt; {
@@ -51,12 +52,21 @@ public class HomePageModel : uModel&lt;HomePageModel&gt; {
 }
 </pre>
 
-Here you see a document type containing a Title and a Highlight that is multiple media picker. In the object you see that properties back. By adding a attribute [W3S.UmbracoMedia] the uORM knows that it needs to find the relation in the media. If you have a single picker (no multiple) just remove the List&lt;BannerModel&gt; and add BannerModel. This is also possible with [W3S.UmbracoContent], same principe!
+Here's a document type containing a Title and a Highlight that is multiple media picker. In the object you see that properties back. By adding a attribute [W3S.UmbracoMedia] the uORM knows that it needs to find the relation in the media. If you have a single picker (no multiple) just remove the List&lt;BannerModel&gt; and add BannerModel. This is also possible with [W3S.UmbracoContent], same principe!
 
 The last item in the object are NewsDetail items that need to be displayed on the homepage. [W3S.UmbracoDescendants("NewsDetail", 1)] finds all the descendants with the document type "NewsDetail" from ancestorofself(1). It's that easy!
 
+These are the diffent attributes
+
+* [W3S.UmbracoMedia] find the comma separeted values in media;
+* [W3S.UmbracoContent] find the comma separeted values in content;
+* [W3S.NoUmbraco] do nothing with this attribute;
+* [W3S.UmbracoLink] this is a related link object (need to be converted from JSON to object);
+* [W3S.UmbracoDescendants(String contentTypeAlias)] find all the descendants from current node with a specifiek document type alias;
+* [W3S.UmbracoDescendants(String contentTypeAlias, Int32 ancestorOrSelf)] find all the descendants from a ancestor or self with a specifiek document type alias.
+
 ##More then only load the object?
-If you don't have a simple object to be filled but still want to use the dependency injection. Also included! Just override the load functions like this: 
+If you want more then a object to be loaded you have to override the load functions like this: 
 
 <pre>
 public class HomePageModel : uModel&lt;HomePageModel&gt; {
@@ -68,4 +78,3 @@ public class HomePageModel : uModel&lt;HomePageModel&gt; {
     }
 </pre>
 
-And add the things you need to add.
