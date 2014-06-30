@@ -19,7 +19,7 @@ public ActionResult HomePage(RenderModel model) {
 
 As a solution we build the W3S Umbraco Object Relation Mapper (in short uORM).
 
-## Basic usage W3S Umbraco Object Relation Mapper
+## Basic usage Umbraco Object Relation Mapper
 Install the uORM.dll and create your document type in Umbraco. Properties in that document type must be the same as your object. (in this simple example only with a title alias (case don't matter)). 
 
 Then create a strong typed object like this:
