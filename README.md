@@ -44,7 +44,7 @@ public ActionResult HomePage(HomePageModel model) {
     return View(model);
 }
 </pre>
-And there you go! A nice object with all the properties set for your use!
+And there you go! A nice object with all the properties set for your use! And if you still need to use the current IPublishedContent then you can find it in the property Content (model.Content).
 
 ##Relations?
 But what about relations? Lets take a bigger object.
