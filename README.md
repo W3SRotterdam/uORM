@@ -108,7 +108,7 @@ public ActionResult IntakeFormPost(IntakeFormFieldsModel model) {
 }
 </pre>
 
-Just use the Umbraco way to post data (http://our.umbraco.org/documentation/Reference/Mvc/forms) and after that use the save method to save. In this example a made a new node with as title the email, document type "SignUp" and with parentnode 4817. A existing object can be save without any parameters like this:
+Just use the Umbraco way to post data (http://our.umbraco.org/documentation/Reference/Mvc/forms) and after that use the save method to save. In this example a made a new node with email as title, document type "SignUp" and with parentnode 4817. A existing object can be save without any parameters like this:
 
 <pre>
 public ActionResult HomePage(HomePageModel model) {
