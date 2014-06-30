@@ -52,7 +52,7 @@ public class HomePageModel : uModel&lt;HomePageModel&gt; {
 }
 </pre>
 
-Here's a document type containing a Title and a Highlight that is multiple media picker. In the object you see that properties back. By adding a attribute [W3S.UmbracoMedia] the uORM knows that it needs to find the relation in the media. If you have a single picker (no multiple) just remove the List&lt;BannerModel&gt; and add BannerModel. This is also possible with [W3S.UmbracoContent], same principe!
+Here's a document type containing a Title and a Highlight that is multiple media picker. In the object you define that properties also. By adding an attribute [W3S.UmbracoMedia] the uORM knows that it needs to find the relation in the media. If you have a single picker (no multiple) just remove the List&lt;BannerModel&gt; and add BannerModel. This is also possible with [W3S.UmbracoContent], same principe!
 
 The last item in the object are NewsDetail items that need to be displayed on the homepage. [W3S.UmbracoDescendants("NewsDetail", 1)] finds all the descendants with the document type "NewsDetail" from ancestorofself(1). It's that easy!
 
@@ -63,9 +63,16 @@ These are the diffent attributes
 * [W3S.UmbracoMedia] find the comma separeted values in media;
 * [W3S.UmbracoContent] find the comma separeted values in content;
 * [W3S.NoUmbraco] do nothing with this attribute;
-* [W3S.UmbracoLink] this is a related link object (need to be converted from JSON to object);
+* [W3S.UmbracoLink] this is a object for related link property;
 * [W3S.UmbracoDescendants(String contentTypeAlias)] find all the descendants from current node with a specifiek document type alias;
 * [W3S.UmbracoDescendants(String contentTypeAlias, Int32 ancestorOrSelf)] find all the descendants from a ancestor or self with a specifiek document type alias.
+
+##Helper objects
+As some media types / json objects are already defined in Umbraco we added those object in the uORM.
+
+* W3S.UmbracoModels.FileModel, Umbraco Media type File;
+* W3S.UmbracoModels.ImageModel, Umbraco Media type Image;
+* W3S.UmbracoModels.LinkModel, object for related links ([W3S.UmbracoLink]);
 
 ##More then only load the object?
 If you want more then a object to be loaded you have to override the load functions like this: 
