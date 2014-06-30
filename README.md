@@ -56,6 +56,8 @@ Here's a document type containing a Title and a Highlight that is multiple media
 
 The last item in the object are NewsDetail items that need to be displayed on the homepage. [W3S.UmbracoDescendants("NewsDetail", 1)] finds all the descendants with the document type "NewsDetail" from ancestorofself(1). It's that easy!
 
+W3S uOrm is recursive so also a complex object with nested objects are set (so look out not to create a loop!).
+
 These are the diffent attributes
 
 * [W3S.UmbracoMedia] find the comma separeted values in media;
@@ -77,4 +79,53 @@ public class HomePageModel : uModel&lt;HomePageModel&gt; {
         }
     }
 </pre>
+
+##Save method
+If you got a form in Umbraco and want to save the content to Umbraco you can use the save method. 
+<pre>
+[HttpPost]
+public ActionResult IntakeFormPost(IntakeFormFieldsModel model) {
+    if(!ModelState.IsValid) {
+        return CurrentUmbracoPage();
+    }
+    model.Save(model.Email, "SignUp", 4817);
+
+    return RedirectToCurrentUmbracoPage();          
+}
+</pre>
+
+Just use the Umbraco way to post data (http://our.umbraco.org/documentation/Reference/Mvc/forms) and after that use the save method to save. In this example a made a new node with as title the email, document type "SignUp" and with parentnode 4817. A existing object can be save without any parameters like this:
+
+<pre>
+public ActionResult HomePage(HomePageModel model) {
+            model.Title = "Change title";
+            model.Save();
+            return View(model);
+        }
+</pre>
+
+These are the methods:
+
+* Save(), saves the current object;
+* Save(String nodeName, String documentTypeAlias, Int32 parentId), saves the current object;
+* Save(String nodeName, String documentTypeAlias, Int32 parentId, Int32 userId) , saves the current object;
+* SaveAndPublish(), saves and publish the current object;
+* SaveAndPublish(String nodeName, String documentTypeAlias, Int32 parentId), saves and publish a new object with the document type and parentNodeId;
+* SaveAndPublish(String nodeName, String documentTypeAlias, Int32 parentId, Int32 userId), saves and publish a new object with the document type, parentNodeId by a custom user.
+
+## Todo
+
+* Endless loop need to be detected and must throw a execption;
+* Save function can only save document type;
+* Save is not recursive, can only save simple object;
+ 
+## History 
+First reflection part was written by Pawel Choroszcak from W3S. Edwin van Koppen (also W3S) extended the object with recursive methods and save functions.
+
+## Common error's
+<pre>
+Object of type 'System.Web.HtmlString' cannot be converted to type 'System.String'.
+</pre>
+Rich text fields need to be of the type HtmlString
+
 
