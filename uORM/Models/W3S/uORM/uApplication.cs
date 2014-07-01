@@ -13,7 +13,7 @@ namespace W3S.uORM {
         protected override void ApplicationStarted(UmbracoApplicationBase httpApplication, ApplicationContext applicationContext) {
             base.ApplicationStarting(httpApplication, applicationContext);
 
-            ModelBinders.Binders.DefaultBinder = new W3S.uORM.RenderModelBinder();
+            ModelBinders.Binders.DefaultBinder = new W3S.uORM.RenderModelBinder(); 
         }
     }
 }

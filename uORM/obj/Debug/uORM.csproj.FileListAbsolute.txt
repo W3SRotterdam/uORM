@@ -24,3 +24,4 @@ c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\bin\System.Web.WebPa
 c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\bin\System.Web.WebPages.Razor.xml
 c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\obj\Debug\W3S.uORM.dll
 c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\obj\Debug\W3S.uORM.pdb
+c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\obj\Debug\uORM.csprojResolveAssemblyReference.cache
