@@ -25,6 +25,19 @@ PM> Install-Package W3S-uORM
 
 Or download W3S.uORM.dll and add a reference your project. (then you need, interfaces.dll, Umbraco.Core.dll and umbraco.dll as reference also).
 
+Create a own Umbraco ApplicationEventHandler and add the handler for the Dependency Injection:
+
+<pre>
+public class UmbracoApplication : ApplicationEventHandler {
+        public UmbracoApplication() { }
+        protected override void ApplicationStarted(UmbracoApplicationBase httpApplication, ApplicationContext applicationContext) {
+            base.ApplicationStarting(httpApplication, applicationContext);
+
+            ModelBinders.Binders.DefaultBinder = new W3S.uORM.RenderModelBinder(); 
+        }
+    }
+</pre>
+
 
 ## Basic usage 
 Install the uORM.dll and create your document type in Umbraco. Properties in that document type must be the same as your object. (in this simple example only with a title alias (case don't matter)). 
