@@ -25,7 +25,7 @@ PM> Install-Package W3S-uORM
 
 Or download W3S.uORM.dll and add a reference your project. (then you need, interfaces.dll, Umbraco.Core.dll and umbraco.dll as reference also).
 
-Create a own Umbraco ApplicationEventHandler and add the handler for the Dependency Injection:
+Create a own Umbraco ApplicationEventHandler and add the binder for the Dependency Injection:
 
 <pre>
 public class UmbracoApplication : ApplicationEventHandler {
