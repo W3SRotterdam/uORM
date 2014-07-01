@@ -1,4 +1,3 @@
-c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\bin\Umbraco.Core.xml
 c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\bin\W3S.uORM.dll.config
 c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\bin\W3S.uORM.dll
 c:\users\ed\documents\visual studio 2013\Projects\uORM\uORM\bin\W3S.uORM.pdb
