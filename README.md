@@ -2,7 +2,7 @@
 
 ## Idea!
 
-We wanted to use strong typed objecs in Umbraco with Dependency Injection, like this:
+We wanted to use strong typed objecs in Umbraco with Dependency Injection:
 
 <pre>
 public ActionResult HomePage(HomePageModel model) {
@@ -10,7 +10,7 @@ public ActionResult HomePage(HomePageModel model) {
 }
 </pre>
 
-And not the default Umbraco way like this (route hijacking http://our.umbraco.org/documentation/Reference/Mvc/custom-controllers):
+Instead of the default Umbraco way (route hijacking http://our.umbraco.org/documentation/Reference/Mvc/custom-controllers):
 <pre>
 public ActionResult HomePage(RenderModel model) {
     return View(model);
@@ -23,9 +23,9 @@ As a solution we build the W3S Umbraco Object Relation Mapper (in short uORM).
 Use NuGet Package Manager Console:
 PM> Install-Package W3S-uORM 
 
-Or download W3S.uORM.dll and add a reference your project. (then you need, interfaces.dll, Umbraco.Core.dll and umbraco.dll as reference also).
+Or download W3S.uORM.dll and add a reference your project. (you will also need, interfaces.dll, Umbraco.Core.dll and umbraco.dll as reference).
 
-Create a own Umbraco ApplicationEventHandler and add the binder for the Dependency Injection:
+Create your own Umbraco ApplicationEventHandler and add the binder for the Dependency Injection:
 
 <pre>
 public class UmbracoApplication : ApplicationEventHandler {
@@ -40,7 +40,7 @@ public class UmbracoApplication : ApplicationEventHandler {
 
 
 ## Basic usage 
-Install the uORM.dll and create your document type in Umbraco. Properties in that document type must be the same as your object. (in this simple example only with a title alias (case don't matter)). 
+Install the uORM.dll and create your document type in Umbraco. Properties in that document type must be the same as your object. (in this simple example we've only created the title alias (case doesn't matter)). 
 
 Then create a strong typed object like this:
 <pre>
@@ -64,7 +64,7 @@ public ActionResult HomePage(HomePageModel model) {
     return View(model);
 }
 </pre>
-And there you go! A nice object with all the properties set for your use! And if you still need to use the current IPublishedContent then you can find it in the property Content (model.Content).
+And there you go! A nice object with all the properties set for your use! If you still need to use the current IPublishedContent you can find it in the property Content (model.Content).
 
 ##Relations?
 But what about relations? Lets take a bigger object.
@@ -79,17 +79,17 @@ public class HomePageModel : uModel&lt;HomePageModel&gt; {
 }
 </pre>
 
-Here's a document type containing a Title and a Highlight that is multiple media picker. In the object you define that properties also. By adding an attribute [W3S.UmbracoMedia] the uORM knows that it needs to find the relation in the media. If you have a single picker (no multiple) just remove the List&lt;BannerModel&gt; and add BannerModel. This is also possible with [W3S.UmbracoContent], same principe!
+Here's a document type containing a Title and a Highlight that a multiple media picker. In the object you define these properties the same a the document type. By adding an attribute [W3S.UmbracoMedia] the uORM knows that it needs to find the relation in the media. If you have a single picker (no multiple) just remove the List&lt;BannerModel&gt; and add BannerModel. This is also possible with [W3S.UmbracoContent], same principe!
 
 The last item in the object are NewsDetail items that need to be displayed on the homepage. [W3S.UmbracoDescendants("NewsDetail", 1)] finds all the descendants with the document type "NewsDetail" from ancestorofself(1). It's that easy!
 
-W3S uOrm is recursive so also a complex object with nested objects are set (so look out not to create a loop!).
+W3S uORM is recursive, which means that complex objects with nested objects can also be set (watch out not to create a loop!).
 
 These are the diffent attributes
 
-* [W3S.UmbracoMedia] find the comma separeted values in media;
-* [W3S.UmbracoContent] find the comma separeted values in content;
-* [W3S.NoUmbraco] do nothing with this attribute;
+* [W3S.UmbracoMedia] finds the comma separeted values in media;
+* [W3S.UmbracoContent] finds the comma separeted values in content;
+* [W3S.NoUmbraco] does nothing with this attribute;
 * [W3S.UmbracoLink] this is a object for related link property;
 * [W3S.UmbracoDescendants(String contentTypeAlias)] find all the descendants from current node with a specifiek document type alias;
 * [W3S.UmbracoDescendants(String contentTypeAlias, Int32 ancestorOrSelf)] find all the descendants from a ancestor or self with a specifiek document type alias.
@@ -102,7 +102,7 @@ As some media types / json objects are already defined in Umbraco we added those
 * W3S.UmbracoModels.LinkModel, object for related links ([W3S.UmbracoLink]);
 
 ##More then only load the object?
-If you want more then a object to be loaded you have to override the load functions like this: 
+If you want more than just an object to be loaded you have to override the load functions like this: 
 
 <pre>
 public class HomePageModel : uModel&lt;HomePageModel&gt; {
@@ -115,7 +115,7 @@ public class HomePageModel : uModel&lt;HomePageModel&gt; {
 </pre>
 
 ##Save method
-If you got a form in Umbraco and want to save the content to Umbraco you can use the save method. 
+If you've got a form in Umbraco and want to save the content to Umbraco you can use the save method. 
 <pre>
 [HttpPost]
 public ActionResult IntakeFormPost(IntakeFormFieldsModel model) {
@@ -128,7 +128,7 @@ public ActionResult IntakeFormPost(IntakeFormFieldsModel model) {
 }
 </pre>
 
-Just use the Umbraco way to post data (http://our.umbraco.org/documentation/Reference/Mvc/forms) and after that use the save method to save. In this example a made a new node with email as title, document type "SignUp" and with parentnode 4817. A existing object can be save without any parameters like this:
+Just use the Umbraco way to post data (http://our.umbraco.org/documentation/Reference/Mvc/forms) and after that use the save method to save. In this example we made a new node with email as title, document type "SignUp" and with parentnode 4817. An existing object can be saved without any parameters like this:
 
 <pre>
 public ActionResult HomePage(HomePageModel model) {
@@ -143,18 +143,18 @@ These are the methods:
 * Save(), saves the current object;
 * Save(String nodeName, String documentTypeAlias, Int32 parentId), saves the current object;
 * Save(String nodeName, String documentTypeAlias, Int32 parentId, Int32 userId) , saves the current object;
-* SaveAndPublish(), saves and publish the current object;
-* SaveAndPublish(String nodeName, String documentTypeAlias, Int32 parentId), saves and publish a new object with the document type and parentNodeId;
-* SaveAndPublish(String nodeName, String documentTypeAlias, Int32 parentId, Int32 userId), saves and publish a new object with the document type, parentNodeId by a custom user.
+* SaveAndPublish(), saves and publishes the current object;
+* SaveAndPublish(String nodeName, String documentTypeAlias, Int32 parentId), saves and publishes a new object with the document type and parentNodeId;
+* SaveAndPublish(String nodeName, String documentTypeAlias, Int32 parentId, Int32 userId), saves and publishes a new object with the document type, parentNodeId by a custom user.
 
 ## Todo
 
-* Endless loop need to be detected and must throw a execption;
+* Endless loops need to be detected and must throw a execption;
 * Save function can only save document type;
-* Save is not recursive, can only save simple object;
+* Save is not recursive, it can only save simple object;
  
 ## History 
-First reflection part was written by Pawel Choroszcak from W3S. Edwin van Koppen (also W3S) extended the object with recursive methods and save functions.
+The first reflection part was written by Pawel Choroszcak from W3S. Edwin van Koppen (also W3S) extended the object with recursive methods and save functions.
 
 ## Common error's
 <pre>
