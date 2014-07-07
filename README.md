@@ -87,12 +87,12 @@ W3S uORM is recursive, which means that complex objects with nested objects can 
 
 These are the diffent attributes
 
-* [W3S.UmbracoMedia] finds the comma separeted values in media;
-* [W3S.UmbracoContent] finds the comma separeted values in content;
-* [W3S.NoUmbraco] does nothing with this attribute;
-* [W3S.UmbracoLink] this is a object for related link property;
-* [W3S.UmbracoDescendants(String contentTypeAlias)] find all the descendants from current node with a specifiek document type alias;
-* [W3S.UmbracoDescendants(String contentTypeAlias, Int32 ancestorOrSelf)] find all the descendants from a ancestor or self with a specifiek document type alias.
+* [W3S.uORM.UmbracoMedia] finds the comma separeted values in media;
+* [W3S.uORM.UmbracoContent] finds the comma separeted values in content;
+* [W3S.uORM.NoUmbraco] does nothing with this attribute;
+* [W3S.uORM.UmbracoLink] this is a object for related link property;
+* [W3S.uORM.UmbracoDescendants(String contentTypeAlias)] find all the descendants from current node with a specifiek document type alias;
+* [W3S.uORM.UmbracoDescendants(String contentTypeAlias, Int32 ancestorOrSelf)] find all the descendants from a ancestor or self with a specifiek document type alias.
 
 ##Helper objects
 As some media types / json objects are already defined in Umbraco we added those objects in the uORM.
