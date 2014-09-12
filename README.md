@@ -154,7 +154,7 @@ These are the methods:
 * Save is not recursive, it can only save simple object;
  
 ## History 
-The first reflection part was written by Pawel Choroszcak from http://W3S.nl. Edwin van Koppen (also W3S) extended the object with recursive methods and save functions.
+The first reflection part was written by Pawel Choroszcak from W3S (http://w3s.nl). Edwin van Koppen (also W3S) extended the object with recursive methods and save functions.
 
 ## Common error's
 <pre>
